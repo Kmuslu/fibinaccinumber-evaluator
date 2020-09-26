@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Numbers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <h1 id="h1-1">Patterns in Nature:
+            The Fibonacci Sequence and the Golden Ratio</h1>
+            <p>One of the most famous pattern in nature is the golden ratio. To explain this pattern in a mathematical
+                way
+                we can say that two quantities are in golden ratio if their ratio is the same as the sum to the larger
+                of
+                the two quantities as it is shown in the following graph:</p>
+            <img src="./img/Formula.jpg" alt="formula">
+            <p>If we use this formula we can get the golden spirals or a Fibonacci spiral as shown in the image below.
+            </p>
+            <img src="./img/Fibo1.png" alt="image">
+
+            <p>The Fibonacci sequence is shown as follows:</p>
+            <p> 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, ...</p>
+            <p>Let's calculate the Fibonacci Sequence. By entering a positive number you will be able to find the nth
+                number in the sequence. </p>
+        </div>
+        <div class="calculator">
+            <p id="intro">Let's calculate the Fibonacci Sequence. By selecting a number you will be able to find the nth
+                number in the sequence. </p>
+            <div>
+                <input type="number" id="user-input">
+                <button id="button" onclick="myFibo()"> CHECK </button>
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // let n = document.getElementById("user-input").value;
+
+        function myFibo() {
+            let n = document.getElementById("user-input").value;
+            let fibo = [1, 1];
+            if (n == 1 || n == 2) {
+                document.getElementById("result").innerHTML = `Fibonacci(${n}) is 1`
+            }
+            else {
+                for (let i = 0; i < n; i++) {
+                    fibo.push(fibo[i] + fibo[i + 1])
+                }
+                document.getElementById("result").innerHTML = `Fibonacci(${n}) is ` + fibo[n - 1];
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
